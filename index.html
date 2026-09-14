@@ -6,7 +6,7 @@
 
 <title>THE FOLLOWER — Charlie Gambino</title>
 
-<meta name="description" content="THE FOLLOWER — A web series exploring the mind, the internet, creation, reflection, internet folklore, liminal spaces, games, and cinema.">
+<meta name="description" content="THE FOLLOWER — A web series by Charlie Gambino exploring the mind, the internet, creation, reflection, liminal spaces, internet folklore, games and cinema.">
 
 <style>
 
@@ -23,25 +23,26 @@ html {
 }
 
 body {
-    background: #080909;
-    color: #d6d6d0;
+    background: #070808;
+    color: #d5d5cf;
     font-family: "IBM Plex Mono", monospace;
     overflow-x: hidden;
 }
 
-/* =========================
-   GRAIN / ATMOSPHERE
-========================= */
+/* =========================================
+   FILM GRAIN
+========================================= */
 
 body::before {
     content: "";
     position: fixed;
     inset: 0;
     pointer-events: none;
-    z-index: 999;
-    opacity: 0.08;
+    z-index: 9999;
+    opacity: .07;
+
     background-image:
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='.8'/%3E%3C/svg%3E");
 }
 
 body::after {
@@ -49,61 +50,69 @@ body::after {
     position: fixed;
     inset: 0;
     pointer-events: none;
-    z-index: 998;
-    background: linear-gradient(
-        rgba(255,255,255,0.025) 50%,
-        transparent 50%
+    z-index: 9998;
+
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(255,255,255,.025),
+        rgba(255,255,255,.025) 1px,
+        transparent 1px,
+        transparent 4px
     );
-    background-size: 100% 4px;
-    opacity: 0.15;
+
+    opacity: .15;
 }
 
-/* =========================
-   NAV
-========================= */
+/* =========================================
+   NAVIGATION
+========================================= */
 
 nav {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 22px 35px;
+
+    padding: 21px 35px;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    z-index: 100;
+    z-index: 500;
 
-    background: rgba(5,6,6,0.45);
-    backdrop-filter: blur(12px);
+    background: rgba(5,6,6,.45);
+    backdrop-filter: blur(15px);
 
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255,255,255,.07);
 }
 
 .logo {
     font-family: "Space Mono", monospace;
-    font-size: 12px;
+    font-size: 11px;
     letter-spacing: 5px;
-    color: #e8e8df;
+    color: #ddd;
 }
 
 nav a {
-    color: #858580;
+    color: #777;
     text-decoration: none;
-    font-size: 10px;
+
+    font-size: 9px;
     letter-spacing: 3px;
+
     margin-left: 25px;
-    transition: 0.3s;
+
+    transition: .3s;
 }
 
 nav a:hover {
-    color: #fff;
+    color: white;
 }
 
-/* =========================
+/* =========================================
    HERO
-========================= */
+========================================= */
 
 .hero {
     height: 100vh;
@@ -113,12 +122,15 @@ nav a:hover {
 
     display: flex;
     align-items: center;
-    justify-content: center;
 
     overflow: hidden;
 }
 
-/* Your uploaded photo */
+/*
+    YOUR PHOTO
+    Keep this exact filename in the same
+    GitHub folder as index.html.
+*/
 
 .hero-image {
     position: absolute;
@@ -127,9 +139,9 @@ nav a:hover {
     background-image:
         linear-gradient(
             to bottom,
-            rgba(0,0,0,0.15),
-            rgba(0,0,0,0.45) 50%,
-            rgba(0,0,0,0.9)
+            rgba(0,0,0,.08),
+            rgba(0,0,0,.25) 45%,
+            rgba(0,0,0,.92) 100%
         ),
         url("i dont wanna say goodbye DSC04780.png");
 
@@ -137,17 +149,18 @@ nav a:hover {
     background-position: center;
 
     filter:
-        brightness(0.72)
+        brightness(.72)
         contrast(1.12)
-        saturate(0.75);
+        saturate(.72);
 
-    transform: scale(1.03);
+    transform: scale(1.04);
 }
 
-/* Slight color wash */
+/* Dark vignette */
 
 .hero::after {
     content: "";
+
     position: absolute;
     inset: 0;
 
@@ -155,62 +168,66 @@ nav a:hover {
         radial-gradient(
             ellipse at center,
             transparent 20%,
-            rgba(0,0,0,0.45) 100%
+            rgba(0,0,0,.65) 100%
         );
 
     pointer-events: none;
 }
 
-/* =========================
-   HERO TEXT
-========================= */
+/* =========================================
+   HERO CONTENT
+========================================= */
 
 .hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 5;
 
-    width: 90%;
-    max-width: 1100px;
+    width: 88%;
+    max-width: 1200px;
 
-    margin-top: 80px;
+    margin: 100px auto 0;
 }
 
 .status {
     display: inline-block;
 
-    margin-bottom: 25px;
-
-    font-size: 10px;
-    letter-spacing: 4px;
-    color: #999994;
+    padding-left: 13px;
 
     border-left: 1px solid #aaa;
-    padding-left: 12px;
+
+    color: #aaa;
+
+    font-size: 9px;
+    letter-spacing: 4px;
+
+    margin-bottom: 27px;
 }
 
 .hero h1 {
     font-family: "Space Mono", monospace;
 
-    font-size: clamp(55px, 11vw, 150px);
+    font-size: clamp(60px, 11vw, 155px);
 
-    line-height: 0.82;
-    letter-spacing: -7px;
+    line-height: .8;
+
+    letter-spacing: -8px;
 
     font-weight: 400;
 
     color: #eeeeea;
 
     text-shadow:
-        0 0 30px rgba(255,255,255,0.08);
+        0 0 30px rgba(255,255,255,.08);
 }
 
 .hero-subtitle {
-    margin-top: 35px;
+    max-width: 550px;
 
-    max-width: 520px;
+    margin-top: 40px;
 
-    font-size: 12px;
-    line-height: 1.9;
+    font-size: 11px;
+
+    line-height: 2;
 
     color: #aaa9a2;
 }
@@ -221,47 +238,40 @@ nav a:hover {
     bottom: 35px;
     left: 35px;
 
-    font-size: 9px;
+    z-index: 10;
+
+    color: #777;
+
+    font-size: 8px;
     letter-spacing: 4px;
-
-    color: #777772;
-
-    z-index: 3;
 }
 
 .scroll::before {
     content: "";
+
     display: inline-block;
 
     width: 35px;
     height: 1px;
 
     background: #777;
+
     vertical-align: middle;
 
     margin-right: 12px;
 }
 
-/* =========================
-   MAIN
-========================= */
-
-main {
-    position: relative;
-    background: #080909;
-}
-
-/* =========================
+/* =========================================
    INTRO
-========================= */
+========================================= */
 
 .intro {
-    min-height: 80vh;
+    min-height: 85vh;
 
     display: flex;
     align-items: center;
 
-    padding: 120px 12%;
+    padding: 130px 12%;
 }
 
 .intro-inner {
@@ -269,9 +279,10 @@ main {
 }
 
 .eyebrow {
-    font-size: 9px;
+    font-size: 8px;
     letter-spacing: 5px;
-    color: #666660;
+
+    color: #555;
 
     margin-bottom: 35px;
 }
@@ -279,31 +290,36 @@ main {
 .intro h2 {
     font-family: "Space Mono", monospace;
 
-    font-size: clamp(35px, 6vw, 75px);
+    font-size: clamp(38px, 6vw, 78px);
 
-    line-height: 1.05;
+    line-height: 1;
+
     font-weight: 400;
 
-    color: #deded8;
+    letter-spacing: -5px;
 
-    margin-bottom: 40px;
+    color: #ddd;
+
+    margin-bottom: 45px;
 }
 
 .intro p {
-    max-width: 650px;
+    max-width: 680px;
 
-    color: #858580;
+    font-size: 12px;
 
-    font-size: 13px;
-    line-height: 2.1;
+    line-height: 2.2;
+
+    color: #777;
 }
 
-/* =========================
+/* =========================================
    DIVIDER
-========================= */
+========================================= */
 
 .divider {
     width: 76%;
+
     height: 1px;
 
     margin: auto;
@@ -311,14 +327,14 @@ main {
     background: linear-gradient(
         90deg,
         transparent,
-        rgba(255,255,255,0.15),
+        rgba(255,255,255,.15),
         transparent
     );
 }
 
-/* =========================
+/* =========================================
    CONCEPT
-========================= */
+========================================= */
 
 .concept {
     padding: 150px 12%;
@@ -329,27 +345,19 @@ main {
 
     grid-template-columns: 1fr 1fr;
 
-    gap: 100px;
-
-    align-items: start;
-}
-
-.concept-number {
-    font-size: 10px;
-    color: #555550;
-    letter-spacing: 4px;
-
-    margin-bottom: 25px;
+    gap: 110px;
 }
 
 .concept h3 {
     font-family: "Space Mono", monospace;
 
-    font-size: clamp(30px, 5vw, 65px);
+    font-size: clamp(35px, 5vw, 70px);
 
     font-weight: 400;
 
-    line-height: 1;
+    line-height: .95;
+
+    letter-spacing: -5px;
 
     color: #ddd;
 
@@ -357,73 +365,92 @@ main {
 }
 
 .concept p {
-    color: #777771;
-
     font-size: 12px;
+
     line-height: 2;
+
+    color: #777;
 }
 
 .concept-list {
-    border-top: 1px solid #242424;
+    border-top: 1px solid #222;
 }
 
 .concept-item {
-    padding: 20px 0;
-
-    border-bottom: 1px solid #242424;
-
     display: flex;
     justify-content: space-between;
 
-    font-size: 10px;
-    letter-spacing: 2px;
+    padding: 21px 0;
 
-    color: #777;
+    border-bottom: 1px solid #222;
+
+    color: #70706b;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
 }
 
 .concept-item span:last-child {
     color: #444;
 }
 
-/* =========================
-   LIMINAL SECTION
-========================= */
+/* =========================================
+   LIMINAL IMAGE / ATMOSPHERE
+========================================= */
 
 .liminal {
-    min-height: 80vh;
+    min-height: 90vh;
 
     position: relative;
 
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 
     overflow: hidden;
 
-    background:
+    background: #050606;
+}
+
+.liminal::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-image:
         linear-gradient(
-            rgba(0,0,0,0.45),
-            rgba(0,0,0,0.75)
+            rgba(0,0,0,.55),
+            rgba(0,0,0,.8)
         ),
-        radial-gradient(
-            ellipse at center,
-            #252824,
-            #050606 70%
-        );
+        url("i dont wanna say goodbye DSC04780.png");
+
+    background-size: cover;
+    background-position: center;
+
+    filter:
+        grayscale(.5)
+        brightness(.45)
+        blur(1px);
+
+    transform: scale(1.08);
 }
 
 .liminal-content {
-    text-align: center;
-
     position: relative;
+
     z-index: 2;
+
+    text-align: center;
 }
 
 .liminal-small {
-    font-size: 9px;
-    letter-spacing: 6px;
-
     color: #666;
+
+    font-size: 8px;
+
+    letter-spacing: 6px;
 
     margin-bottom: 35px;
 }
@@ -431,30 +458,30 @@ main {
 .liminal h2 {
     font-family: "Space Mono", monospace;
 
-    font-weight: 400;
-
     font-size: clamp(45px, 9vw, 120px);
 
-    letter-spacing: -5px;
+    font-weight: 400;
 
-    color: #d9d9d2;
+    letter-spacing: -6px;
+
+    color: #ddd;
 }
 
 .liminal p {
-    margin: 35px auto 0;
+    max-width: 520px;
 
-    max-width: 500px;
+    margin: 40px auto 0;
 
-    color: #666660;
+    color: #666;
 
-    font-size: 11px;
+    font-size: 10px;
 
     line-height: 2;
 }
 
-/* =========================
+/* =========================================
    EPISODES
-========================= */
+========================================= */
 
 .episodes {
     padding: 150px 12%;
@@ -475,19 +502,21 @@ main {
 
     font-weight: 400;
 
-    letter-spacing: -5px;
+    letter-spacing: -6px;
 }
 
 .section-heading span {
-    font-size: 9px;
-    letter-spacing: 3px;
     color: #555;
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
 }
 
 .episode {
     display: grid;
 
-    grid-template-columns: 90px 1fr auto;
+    grid-template-columns: 80px 1fr auto;
 
     gap: 30px;
 
@@ -496,51 +525,62 @@ main {
     padding: 35px 0;
 
     border-top: 1px solid #202020;
+
+    transition: .3s;
 }
 
 .episode:last-child {
     border-bottom: 1px solid #202020;
 }
 
+.episode:hover {
+    padding-left: 10px;
+}
+
 .episode-number {
-    font-size: 10px;
-    color: #555;
+    color: #444;
+
+    font-size: 9px;
 }
 
 .episode h3 {
     font-family: "Space Mono", monospace;
 
-    font-size: 19px;
+    font-size: 18px;
+
     font-weight: 400;
 
-    color: #bbb;
+    color: #aaa;
 
     margin-bottom: 8px;
 }
 
 .episode p {
-    font-size: 10px;
     color: #555;
+
+    font-size: 9px;
 }
 
 .episode-status {
-    font-size: 8px;
+    color: #444;
+
+    font-size: 7px;
+
     letter-spacing: 3px;
-    color: #555;
 }
 
-/* =========================
+/* =========================================
    CREATION
-========================= */
+========================================= */
 
 .creation {
-    padding: 150px 12%;
+    padding: 160px 12%;
 
     background: #0b0c0c;
 }
 
 .creation-inner {
-    max-width: 900px;
+    max-width: 850px;
 }
 
 .creation h2 {
@@ -550,27 +590,152 @@ main {
 
     font-weight: 400;
 
-    letter-spacing: -5px;
+    line-height: .9;
+
+    letter-spacing: -6px;
 
     margin-bottom: 50px;
 }
 
 .creation p {
-    font-size: 13px;
-
-    line-height: 2.2;
+    max-width: 700px;
 
     color: #777;
 
-    max-width: 700px;
+    font-size: 12px;
+
+    line-height: 2.2;
 }
 
-/* =========================
+/* =========================================
+   MUSIC / SOCIAL ARCHIVE
+========================================= */
+
+.archive {
+    padding: 150px 12%;
+}
+
+.archive-heading {
+    margin-bottom: 70px;
+}
+
+.archive-heading h2 {
+    font-family: "Space Mono", monospace;
+
+    font-size: clamp(40px, 7vw, 85px);
+
+    font-weight: 400;
+
+    letter-spacing: -6px;
+}
+
+.archive-heading p {
+    color: #555;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    margin-top: 20px;
+}
+
+.link-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 1px;
+
+    background: #222;
+
+    border: 1px solid #222;
+}
+
+.archive-link {
+    position: relative;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    min-height: 120px;
+
+    padding: 30px;
+
+    background: #090a0a;
+
+    color: #aaa;
+
+    text-decoration: none;
+
+    transition: .35s;
+
+    overflow: hidden;
+}
+
+.archive-link::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    width: 2px;
+
+    background: #888;
+
+    transform: scaleY(0);
+
+    transform-origin: bottom;
+
+    transition: .35s;
+}
+
+.archive-link:hover {
+    background: #111212;
+
+    color: #eee;
+
+    padding-left: 40px;
+}
+
+.archive-link:hover::before {
+    transform: scaleY(1);
+}
+
+.archive-name {
+    font-family: "Space Mono", monospace;
+
+    font-size: 14px;
+
+    letter-spacing: 2px;
+}
+
+.archive-description {
+    color: #4f4f4b;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    margin-top: 8px;
+}
+
+.archive-arrow {
+    color: #555;
+
+    font-size: 15px;
+}
+
+/* =========================================
    QUOTE
-========================= */
+========================================= */
 
 .quote {
-    min-height: 70vh;
+    min-height: 75vh;
 
     display: flex;
 
@@ -583,15 +748,17 @@ main {
 }
 
 .quote p {
+    max-width: 900px;
+
     font-family: "Space Mono", monospace;
 
     font-size: clamp(25px, 4vw, 55px);
 
     line-height: 1.3;
 
-    color: #bdbdb6;
+    color: #bbb;
 
-    max-width: 900px;
+    letter-spacing: -2px;
 }
 
 .quote span {
@@ -599,85 +766,36 @@ main {
 
     margin-top: 40px;
 
-    font-family: "IBM Plex Mono", monospace;
-
-    font-size: 9px;
-
-    letter-spacing: 4px;
-
-    color: #4e4e49;
-}
-
-/* =========================
-   LINKS
-========================= */
-
-.links {
-    padding: 100px 12%;
-
-    border-top: 1px solid #202020;
-}
-
-.links h2 {
-    font-family: "Space Mono", monospace;
-
-    font-size: 14px;
-
-    font-weight: 400;
-
-    letter-spacing: 4px;
-
-    margin-bottom: 35px;
-
-    color: #888;
-}
-
-.links a {
-    display: block;
-
-    width: fit-content;
-
-    color: #666;
-
-    text-decoration: none;
-
-    font-size: 11px;
-
-    letter-spacing: 2px;
-
-    margin: 15px 0;
-
-    transition: 0.3s;
-}
-
-.links a:hover {
-    color: #eee;
-    padding-left: 10px;
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-    padding: 70px 30px;
-
-    text-align: center;
-
-    border-top: 1px solid #181818;
-
     color: #444;
 
     font-size: 8px;
 
     letter-spacing: 4px;
-
-    line-height: 2.5;
 }
 
-/* =========================
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    padding: 90px 30px;
+
+    border-top: 1px solid #181818;
+
+    text-align: center;
+
+    color: #3f3f3b;
+
+    font-size: 8px;
+
+    letter-spacing: 4px;
+
+    line-height: 2.7;
+}
+
+/* =========================================
    MOBILE
-========================= */
+========================================= */
 
 @media (max-width: 750px) {
 
@@ -687,12 +805,12 @@ footer {
 
     nav a {
         margin-left: 10px;
-        font-size: 8px;
+        font-size: 7px;
         letter-spacing: 1px;
     }
 
     .logo {
-        font-size: 9px;
+        font-size: 8px;
         letter-spacing: 3px;
     }
 
@@ -701,14 +819,14 @@ footer {
     }
 
     .hero h1 {
-        letter-spacing: -4px;
+        letter-spacing: -5px;
     }
 
     .intro,
     .concept,
     .episodes,
     .creation,
-    .links {
+    .archive {
         padding-left: 8%;
         padding-right: 8%;
     }
@@ -735,6 +853,14 @@ footer {
         margin-top: 20px;
     }
 
+    .link-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .archive-link {
+        min-height: 100px;
+    }
+
     .scroll {
         left: 20px;
     }
@@ -746,9 +872,9 @@ footer {
 
 <body>
 
-<!-- =========================
+<!-- =====================================
      NAVIGATION
-========================= -->
+===================================== -->
 
 <nav>
 
@@ -759,15 +885,15 @@ footer {
     <div>
         <a href="#about">ABOUT</a>
         <a href="#episodes">EPISODES</a>
-        <a href="#links">CONTACT</a>
+        <a href="#archive">ARCHIVE</a>
     </div>
 
 </nav>
 
 
-<!-- =========================
+<!-- =====================================
      HERO
-========================= -->
+===================================== -->
 
 <section class="hero">
 
@@ -785,9 +911,9 @@ footer {
         </h1>
 
         <p class="hero-subtitle">
-            A series about the mind, the internet,
-            creation, reflection, and the things that
-            exist somewhere between fiction and reality.
+            A series exploring the mind, the internet,
+            creation, reflection, internet folklore,
+            liminal spaces, games and cinema.
         </p>
 
     </div>
@@ -801,9 +927,10 @@ footer {
 
 <main>
 
-<!-- =========================
-     INTRO
-========================= -->
+
+<!-- =====================================
+     ABOUT
+===================================== -->
 
 <section class="intro" id="about">
 
@@ -837,9 +964,9 @@ footer {
 <div class="divider"></div>
 
 
-<!-- =========================
-     CONCEPT
-========================= -->
+<!-- =====================================
+     WORLD
+===================================== -->
 
 <section class="concept">
 
@@ -847,7 +974,7 @@ footer {
 
         <div>
 
-            <div class="concept-number">
+            <div class="eyebrow">
                 002 / THE WORLD
             </div>
 
@@ -862,7 +989,7 @@ footer {
                 A screen becomes a doorway.
                 <br><br>
                 THE FOLLOWER moves through the spaces
-                between reality, imagination, and the
+                between reality, imagination and the
                 internet.
             </p>
 
@@ -913,9 +1040,9 @@ footer {
 </section>
 
 
-<!-- =========================
-     LIMINAL
-========================= -->
+<!-- =====================================
+     LIMINAL IMAGE
+===================================== -->
 
 <section class="liminal">
 
@@ -939,9 +1066,9 @@ footer {
 </section>
 
 
-<!-- =========================
+<!-- =====================================
      EPISODES
-========================= -->
+===================================== -->
 
 <section class="episodes" id="episodes">
 
@@ -1027,9 +1154,9 @@ footer {
 </section>
 
 
-<!-- =========================
+<!-- =====================================
      CREATION
-========================= -->
+===================================== -->
 
 <section class="creation">
 
@@ -1062,9 +1189,236 @@ footer {
 </section>
 
 
-<!-- =========================
+<!-- =====================================
+     SOCIAL + MUSIC ARCHIVE
+===================================== -->
+
+<section class="archive" id="archive">
+
+    <div class="archive-heading">
+
+        <div class="eyebrow">
+            004 / EXTERNAL SIGNALS
+        </div>
+
+        <h2>
+            ARCHIVE
+        </h2>
+
+        <p>
+            FOLLOW / WATCH / LISTEN
+        </p>
+
+    </div>
+
+
+    <div class="link-grid">
+
+
+        <!-- TIKTOK -->
+
+        <a
+            class="archive-link"
+            href="https://www.tiktok.com/@charliegambino.epsiodes"
+            target="_blank"
+            rel="noopener"
+        >
+
+            <div>
+
+                <div class="archive-name">
+                    TIKTOK
+                </div>
+
+                <div class="archive-description">
+                    EPISODES / SHORT TRANSMISSIONS
+                </div>
+
+            </div>
+
+            <div class="archive-arrow">
+                ↗
+            </div>
+
+        </a>
+
+
+        <!-- YOUTUBE -->
+
+        <a
+            class="archive-link"
+            href="https://www.youtube.com/@CharlieGambino"
+            target="_blank"
+            rel="noopener"
+        >
+
+            <div>
+
+                <div class="archive-name">
+                    YOUTUBE
+                </div>
+
+                <div class="archive-description">
+                    VIDEO / FILM / MUSIC
+                </div>
+
+            </div>
+
+            <div class="archive-arrow">
+                ↗
+            </div>
+
+        </a>
+
+
+        <!-- INSTAGRAM -->
+
+        <a
+            class="archive-link"
+            href="https://instagram.com/charliegambino.episodes"
+            target="_blank"
+            rel="noopener"
+        >
+
+            <div>
+
+                <div class="archive-name">
+                    INSTAGRAM
+                </div>
+
+                <div class="archive-description">
+                    IMAGES / EPISODES / UPDATES
+                </div>
+
+            </div>
+
+            <div class="archive-arrow">
+                ↗
+            </div>
+
+        </a>
+
+
+        <!-- APPLE MUSIC -->
+
+        <a
+            class="archive-link"
+            href="https://music.apple.com/us/artist/charlie-gambino/1749800755"
+            target="_blank"
+            rel="noopener"
+        >
+
+            <div>
+
+                <div class="archive-name">
+                    APPLE MUSIC
+                </div>
+
+                <div class="archive-description">
+                    MUSIC / RELEASES
+                </div>
+
+            </div>
+
+            <div class="archive-arrow">
+                ↗
+            </div>
+
+        </a>
+
+
+        <!-- SPOTIFY -->
+
+        <a
+            class="archive-link"
+            href="https://open.spotify.com/artist/3OUwQnoZgQsaTNbueTG0PE?si=4OpUBm40T6irsmQclGzj8A"
+            target="_blank"
+            rel="noopener"
+        >
+
+            <div>
+
+                <div class="archive-name">
+                    SPOTIFY
+                </div>
+
+                <div class="archive-description">
+                    MUSIC / STREAMING
+                </div>
+
+            </div>
+
+            <div class="archive-arrow">
+                ↗
+            </div>
+
+        </a>
+
+
+        <!-- PANDORA -->
+
+        <a
+            class="archive-link"
+            href="https://www.pandora.com/artist/all-songs/charlie-gambino/AR7qP2PXxtdrmw6"
+            target="_blank"
+            rel="noopener"
+        >
+
+            <div>
+
+                <div class="archive-name">
+                    PANDORA
+                </div>
+
+                <div class="archive-description">
+                    MUSIC / RADIO
+                </div>
+
+            </div>
+
+            <div class="archive-arrow">
+                ↗
+            </div>
+
+        </a>
+
+
+        <!-- DEEZER -->
+
+        <a
+            class="archive-link"
+            href="https://link.deezer.com/s/34oGYWHCHzwYtl5B71fbS"
+            target="_blank"
+            rel="noopener"
+        >
+
+            <div>
+
+                <div class="archive-name">
+                    DEEZER
+                </div>
+
+                <div class="archive-description">
+                    MUSIC / STREAMING
+                </div>
+
+            </div>
+
+            <div class="archive-arrow">
+                ↗
+            </div>
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
      QUOTE
-========================= -->
+===================================== -->
 
 <section class="quote">
 
@@ -1084,46 +1438,12 @@ footer {
 </section>
 
 
-<!-- =========================
-     LINKS
-========================= -->
-
-<section class="links" id="links">
-
-    <h2>
-        FOLLOW THE PROJECT
-    </h2>
-
-    <a
-        href="https://www.youtube.com/@CharlieGambino"
-        target="_blank"
-    >
-        YOUTUBE →
-    </a>
-
-    <a
-        href="https://www.tiktok.com/@charliegambino.epsiodes"
-        target="_blank"
-    >
-        TIKTOK / EPISODES →
-    </a>
-
-    <a
-        href="https://instagram.com/charliegambino.episodes"
-        target="_blank"
-    >
-        INSTAGRAM / EPISODES →
-    </a>
-
-</section>
-
-
 </main>
 
 
-<!-- =========================
+<!-- =====================================
      FOOTER
-========================= -->
+===================================== -->
 
 <footer>
 
