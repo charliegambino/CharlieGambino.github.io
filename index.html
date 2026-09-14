@@ -4,18 +4,60 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>THE FOLLOWER — Charlie Gambino</title>
+<title>Charlie Gambino — Music, Artist & Projects</title>
 
-<meta name="description" content="THE FOLLOWER — A web series by Charlie Gambino exploring the mind, the internet, creation, reflection, liminal spaces, internet folklore, games and cinema.">
+<meta name="description" content="Official website of Charlie Gambino. Listen on Spotify, Apple Music, Pandora, Deezer and YouTube. Explore music, videos and creative projects including The Follower web series.">
+
+<meta name="author" content="Charlie Gambino">
+
+<meta name="keywords" content="
+Charlie Gambino,
+Charlie Gambino music,
+Charlie Gambino artist,
+Charlie Gambino Spotify,
+Charlie Gambino Apple Music,
+Charlie Gambino YouTube,
+Charlie Gambino songs,
+Charlie Gambino musician,
+The Follower web series
+">
+
+<meta property="og:title" content="Charlie Gambino — Official Website">
+<meta property="og:description" content="Music, videos and creative projects by Charlie Gambino.">
+<meta property="og:type" content="website">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- GOOGLE / SEARCH ENGINE STRUCTURED DATA -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MusicGroup",
+  "name": "Charlie Gambino",
+  "url": "https://charliegambino.github.io/",
+  "image": "https://charliegambino.github.io/i%20dont%20wanna%20say%20goodbye%20DSC04780.png",
+  "description": "Charlie Gambino is an independent recording artist and filmmaker creating music, videos, films and web projects.",
+  "sameAs": [
+    "https://open.spotify.com/artist/3OUwQnoZgQsaTNbueTG0PE",
+    "https://music.apple.com/us/artist/charlie-gambino/1749800755",
+    "https://www.youtube.com/@CharlieGambino",
+    "https://www.pandora.com/artist/all-songs/charlie-gambino/AR7qP2PXxtdrmw6",
+    "https://link.deezer.com/s/34oGYWHCHzwYtl5B71fbS",
+    "https://www.tiktok.com/@charliegambino.epsiodes",
+    "https://instagram.com/charliegambino.episodes"
+  ]
+}
+</script>
 
 <style>
 
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 html {
@@ -23,847 +65,532 @@ html {
 }
 
 body {
-    background: #070808;
-    color: #d5d5cf;
-    font-family: "IBM Plex Mono", monospace;
+    background: #080909;
+    color: #eeeeea;
+    font-family: "DM Sans", Arial, sans-serif;
     overflow-x: hidden;
 }
 
-/* =========================================
-   FILM GRAIN
-========================================= */
-
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 9999;
-    opacity: .07;
-
-    background-image:
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='.8'/%3E%3C/svg%3E");
-}
+/* subtle grain */
 
 body::after {
     content: "";
     position: fixed;
     inset: 0;
     pointer-events: none;
-    z-index: 9998;
-
-    background: repeating-linear-gradient(
-        0deg,
-        rgba(255,255,255,.025),
-        rgba(255,255,255,.025) 1px,
-        transparent 1px,
-        transparent 4px
-    );
-
-    opacity: .15;
+    opacity: .035;
+    z-index: 999;
+    background-image:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-/* =========================================
-   NAVIGATION
-========================================= */
+
+/* =========================
+   NAV
+========================= */
 
 nav {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    right: 0;
 
-    padding: 21px 35px;
+    height: 64px;
+
+    padding: 0 5%;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    z-index: 500;
-
-    background: rgba(5,6,6,.45);
-    backdrop-filter: blur(15px);
+    background: rgba(8,9,9,.72);
+    backdrop-filter: blur(18px);
 
     border-bottom: 1px solid rgba(255,255,255,.07);
+
+    z-index: 100;
 }
 
 .logo {
     font-family: "Space Mono", monospace;
-    font-size: 11px;
-    letter-spacing: 5px;
-    color: #ddd;
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: bold;
 }
 
 nav a {
-    color: #777;
+    color: #aaa;
     text-decoration: none;
-
-    font-size: 9px;
-    letter-spacing: 3px;
-
-    margin-left: 25px;
-
-    transition: .3s;
+    margin-left: 18px;
+    font-size: 11px;
+    font-weight: 600;
 }
 
 nav a:hover {
     color: white;
 }
 
-/* =========================================
+
+/* =========================
    HERO
-========================================= */
+========================= */
 
 .hero {
-    height: 100vh;
-    min-height: 700px;
+    min-height: 74vh;
 
-    position: relative;
+    padding: 100px 5% 40px;
 
     display: flex;
     align-items: center;
-
-    overflow: hidden;
 }
 
-/*
-    YOUR PHOTO
-    Keep this exact filename in the same
-    GitHub folder as index.html.
-*/
+.hero-grid {
+    width: 100%;
+    max-width: 1250px;
+    margin: auto;
 
-.hero-image {
-    position: absolute;
-    inset: 0;
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
 
-    background-image:
-        linear-gradient(
-            to bottom,
-            rgba(0,0,0,.08),
-            rgba(0,0,0,.25) 45%,
-            rgba(0,0,0,.92) 100%
-        ),
-        url("i dont wanna say goodbye DSC04780.png");
+    gap: 55px;
 
-    background-size: cover;
-    background-position: center;
-
-    filter:
-        brightness(.72)
-        contrast(1.12)
-        saturate(.72);
-
-    transform: scale(1.04);
+    align-items: center;
 }
 
-/* Dark vignette */
+.label {
+    font-family: "Space Mono", monospace;
 
-.hero::after {
-    content: "";
-
-    position: absolute;
-    inset: 0;
-
-    background:
-        radial-gradient(
-            ellipse at center,
-            transparent 20%,
-            rgba(0,0,0,.65) 100%
-        );
-
-    pointer-events: none;
-}
-
-/* =========================================
-   HERO CONTENT
-========================================= */
-
-.hero-content {
-    position: relative;
-    z-index: 5;
-
-    width: 88%;
-    max-width: 1200px;
-
-    margin: 100px auto 0;
-}
-
-.status {
-    display: inline-block;
-
-    padding-left: 13px;
-
-    border-left: 1px solid #aaa;
-
-    color: #aaa;
+    color: #777;
 
     font-size: 9px;
     letter-spacing: 4px;
 
-    margin-bottom: 27px;
+    margin-bottom: 18px;
 }
 
 .hero h1 {
-    font-family: "Space Mono", monospace;
+    font-size: clamp(62px, 9vw, 125px);
 
-    font-size: clamp(60px, 11vw, 155px);
+    line-height: .78;
 
-    line-height: .8;
+    letter-spacing: -7px;
 
-    letter-spacing: -8px;
-
-    font-weight: 400;
-
-    color: #eeeeea;
-
-    text-shadow:
-        0 0 30px rgba(255,255,255,.08);
+    margin-bottom: 28px;
 }
 
-.hero-subtitle {
-    max-width: 550px;
+.hero-description {
+    max-width: 540px;
 
-    margin-top: 40px;
+    color: #aaa;
 
-    font-size: 11px;
+    font-size: 16px;
+    line-height: 1.6;
 
-    line-height: 2;
-
-    color: #aaa9a2;
+    margin-bottom: 28px;
 }
 
-.scroll {
-    position: absolute;
 
-    bottom: 35px;
-    left: 35px;
+/* =========================
+   PRIMARY MUSIC BUTTONS
+========================= */
 
-    z-index: 10;
-
-    color: #777;
-
-    font-size: 8px;
-    letter-spacing: 4px;
-}
-
-.scroll::before {
-    content: "";
-
-    display: inline-block;
-
-    width: 35px;
-    height: 1px;
-
-    background: #777;
-
-    vertical-align: middle;
-
-    margin-right: 12px;
-}
-
-/* =========================================
-   INTRO
-========================================= */
-
-.intro {
-    min-height: 85vh;
-
+.primary-links {
     display: flex;
-    align-items: center;
-
-    padding: 130px 12%;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
-.intro-inner {
-    max-width: 850px;
-}
+.primary-link {
+    padding: 13px 20px;
 
-.eyebrow {
-    font-size: 8px;
-    letter-spacing: 5px;
+    border-radius: 100px;
 
-    color: #555;
+    text-decoration: none;
 
-    margin-bottom: 35px;
-}
-
-.intro h2 {
-    font-family: "Space Mono", monospace;
-
-    font-size: clamp(38px, 6vw, 78px);
-
-    line-height: 1;
-
-    font-weight: 400;
-
-    letter-spacing: -5px;
-
-    color: #ddd;
-
-    margin-bottom: 45px;
-}
-
-.intro p {
-    max-width: 680px;
+    background: #eeeeea;
+    color: #080909;
 
     font-size: 12px;
+    font-weight: 700;
 
-    line-height: 2.2;
-
-    color: #777;
+    transition: .2s;
 }
 
-/* =========================================
-   DIVIDER
-========================================= */
-
-.divider {
-    width: 76%;
-
-    height: 1px;
-
-    margin: auto;
-
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255,255,255,.15),
-        transparent
-    );
+.primary-link:hover {
+    transform: translateY(-2px);
+    background: white;
 }
 
-/* =========================================
-   CONCEPT
-========================================= */
-
-.concept {
-    padding: 150px 12%;
-}
-
-.concept-grid {
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 110px;
-}
-
-.concept h3 {
-    font-family: "Space Mono", monospace;
-
-    font-size: clamp(35px, 5vw, 70px);
-
-    font-weight: 400;
-
-    line-height: .95;
-
-    letter-spacing: -5px;
-
+.primary-link.secondary {
+    background: transparent;
     color: #ddd;
 
-    margin-bottom: 35px;
+    border: 1px solid #333;
 }
 
-.concept p {
-    font-size: 12px;
-
-    line-height: 2;
-
-    color: #777;
+.primary-link.secondary:hover {
+    border-color: #777;
 }
 
-.concept-list {
-    border-top: 1px solid #222;
-}
 
-.concept-item {
-    display: flex;
-    justify-content: space-between;
+/* =========================
+   PHOTO
+========================= */
 
-    padding: 21px 0;
-
-    border-bottom: 1px solid #222;
-
-    color: #70706b;
-
-    font-size: 9px;
-
-    letter-spacing: 2px;
-}
-
-.concept-item span:last-child {
-    color: #444;
-}
-
-/* =========================================
-   LIMINAL IMAGE / ATMOSPHERE
-========================================= */
-
-.liminal {
-    min-height: 90vh;
-
+.photo-wrap {
     position: relative;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    border-radius: 18px;
 
     overflow: hidden;
 
-    background: #050606;
+    background: #111;
 }
 
-.liminal::before {
-    content: "";
+.photo-wrap img {
+    width: 100%;
+    height: 500px;
 
-    position: absolute;
-    inset: 0;
+    object-fit: cover;
 
-    background-image:
-        linear-gradient(
-            rgba(0,0,0,.55),
-            rgba(0,0,0,.8)
-        ),
-        url("i dont wanna say goodbye DSC04780.png");
-
-    background-size: cover;
-    background-position: center;
+    display: block;
 
     filter:
-        grayscale(.5)
-        brightness(.45)
-        blur(1px);
-
-    transform: scale(1.08);
+        brightness(.83)
+        contrast(1.05)
+        saturate(.9);
 }
 
-.liminal-content {
-    position: relative;
+.photo-label {
+    position: absolute;
 
-    z-index: 2;
+    bottom: 16px;
+    left: 16px;
 
-    text-align: center;
-}
+    padding: 9px 13px;
 
-.liminal-small {
-    color: #666;
+    background: rgba(0,0,0,.68);
 
-    font-size: 8px;
+    backdrop-filter: blur(12px);
 
-    letter-spacing: 6px;
+    border: 1px solid rgba(255,255,255,.15);
 
-    margin-bottom: 35px;
-}
+    border-radius: 20px;
 
-.liminal h2 {
     font-family: "Space Mono", monospace;
 
-    font-size: clamp(45px, 9vw, 120px);
-
-    font-weight: 400;
-
-    letter-spacing: -6px;
-
-    color: #ddd;
+    font-size: 8px;
+    letter-spacing: 2px;
 }
 
-.liminal p {
-    max-width: 520px;
 
-    margin: 40px auto 0;
+/* =========================
+   STREAMING STRIP
+========================= */
 
-    color: #666;
+.streaming {
+    width: 90%;
+    max-width: 1250px;
+
+    margin: 0 auto 55px;
+
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+
+    display: grid;
+
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.stream-link {
+    min-height: 88px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    color: #999;
+
+    text-decoration: none;
+
+    font-family: "Space Mono", monospace;
 
     font-size: 10px;
+    letter-spacing: 1px;
 
-    line-height: 2;
+    border-right: 1px solid #222;
+
+    transition: .2s;
 }
 
-/* =========================================
-   EPISODES
-========================================= */
-
-.episodes {
-    padding: 150px 12%;
+.stream-link:last-child {
+    border-right: 0;
 }
 
-.section-heading {
+.stream-link:hover {
+    background: #111;
+    color: white;
+}
+
+
+/* =========================
+   PROJECTS
+========================= */
+
+.projects {
+    width: 90%;
+    max-width: 1250px;
+
+    margin: 0 auto 55px;
+}
+
+.section-top {
     display: flex;
     justify-content: space-between;
     align-items: end;
 
-    margin-bottom: 70px;
+    margin-bottom: 22px;
 }
 
-.section-heading h2 {
-    font-family: "Space Mono", monospace;
-
-    font-size: clamp(40px, 7vw, 85px);
-
-    font-weight: 400;
-
-    letter-spacing: -6px;
+.section-top h2 {
+    font-size: 32px;
+    letter-spacing: -1px;
 }
 
-.section-heading span {
+.section-top span {
     color: #555;
+
+    font-family: "Space Mono", monospace;
 
     font-size: 8px;
 
     letter-spacing: 3px;
 }
 
-.episode {
+.project-grid {
     display: grid;
-
-    grid-template-columns: 80px 1fr auto;
-
-    gap: 30px;
-
-    align-items: center;
-
-    padding: 35px 0;
-
-    border-top: 1px solid #202020;
-
-    transition: .3s;
+    grid-template-columns: 1.4fr .6fr;
+    gap: 15px;
 }
 
-.episode:last-child {
-    border-bottom: 1px solid #202020;
+.project {
+    min-height: 230px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 16px;
+
+    background: #111;
+
+    padding: 28px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
 }
 
-.episode:hover {
-    padding-left: 10px;
+.follower {
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,.95),
+            rgba(0,0,0,.12)
+        ),
+        url("i dont wanna say goodbye DSC04780.png");
+
+    background-size: cover;
+    background-position: center;
 }
 
-.episode-number {
-    color: #444;
-
-    font-size: 9px;
-}
-
-.episode h3 {
+.project-tag {
     font-family: "Space Mono", monospace;
 
-    font-size: 18px;
+    font-size: 8px;
+    letter-spacing: 3px;
 
-    font-weight: 400;
-
-    color: #aaa;
+    color: #888;
 
     margin-bottom: 8px;
 }
 
-.episode p {
-    color: #555;
+.project h3 {
+    font-size: 30px;
 
-    font-size: 9px;
+    margin-bottom: 8px;
 }
 
-.episode-status {
-    color: #444;
+.project p {
+    max-width: 600px;
 
-    font-size: 7px;
-
-    letter-spacing: 3px;
-}
-
-/* =========================================
-   CREATION
-========================================= */
-
-.creation {
-    padding: 160px 12%;
-
-    background: #0b0c0c;
-}
-
-.creation-inner {
-    max-width: 850px;
-}
-
-.creation h2 {
-    font-family: "Space Mono", monospace;
-
-    font-size: clamp(40px, 7vw, 85px);
-
-    font-weight: 400;
-
-    line-height: .9;
-
-    letter-spacing: -6px;
-
-    margin-bottom: 50px;
-}
-
-.creation p {
-    max-width: 700px;
-
-    color: #777;
+    color: #aaa;
 
     font-size: 12px;
 
-    line-height: 2.2;
+    line-height: 1.5;
 }
 
-/* =========================================
-   MUSIC / SOCIAL ARCHIVE
-========================================= */
+.project a {
+    color: white;
 
-.archive {
-    padding: 150px 12%;
+    text-decoration: none;
+
+    font-size: 11px;
+
+    margin-top: 14px;
+
+    font-weight: 700;
 }
 
-.archive-heading {
-    margin-bottom: 70px;
-}
 
-.archive-heading h2 {
-    font-family: "Space Mono", monospace;
+/* =========================
+   ABOUT + LINKS
+========================= */
 
-    font-size: clamp(40px, 7vw, 85px);
+.bottom {
+    width: 90%;
+    max-width: 1250px;
 
-    font-weight: 400;
+    margin: 0 auto 55px;
 
-    letter-spacing: -6px;
-}
-
-.archive-heading p {
-    color: #555;
-
-    font-size: 9px;
-
-    letter-spacing: 3px;
-
-    margin-top: 20px;
-}
-
-.link-grid {
     display: grid;
+    grid-template-columns: 1fr 1fr;
 
-    grid-template-columns: repeat(2, 1fr);
+    gap: 45px;
 
-    gap: 1px;
+    padding-top: 35px;
 
-    background: #222;
-
-    border: 1px solid #222;
+    border-top: 1px solid #222;
 }
 
-.archive-link {
-    position: relative;
+.about h2,
+.follow h2 {
+    font-size: 20px;
+    margin-bottom: 13px;
+}
 
+.about p {
+    max-width: 540px;
+
+    color: #777;
+
+    line-height: 1.7;
+
+    font-size: 12px;
+}
+
+.follow-links {
     display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
 
-    justify-content: space-between;
-    align-items: center;
+.follow-links a {
+    border: 1px solid #2b2b2b;
 
-    min-height: 120px;
+    border-radius: 50px;
 
-    padding: 30px;
-
-    background: #090a0a;
+    padding: 10px 14px;
 
     color: #aaa;
 
     text-decoration: none;
 
-    transition: .35s;
+    font-size: 10px;
 
-    overflow: hidden;
+    transition: .2s;
 }
 
-.archive-link::before {
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-    top: 0;
-    bottom: 0;
-
-    width: 2px;
-
-    background: #888;
-
-    transform: scaleY(0);
-
-    transform-origin: bottom;
-
-    transition: .35s;
+.follow-links a:hover {
+    color: white;
+    border-color: #666;
 }
 
-.archive-link:hover {
-    background: #111212;
 
-    color: #eee;
+/* =========================
+   FOOTER
+========================= */
 
-    padding-left: 40px;
-}
+footer {
+    width: 90%;
+    max-width: 1250px;
 
-.archive-link:hover::before {
-    transform: scaleY(1);
-}
+    margin: auto;
 
-.archive-name {
-    font-family: "Space Mono", monospace;
+    padding: 25px 0 40px;
 
-    font-size: 14px;
-
-    letter-spacing: 2px;
-}
-
-.archive-description {
-    color: #4f4f4b;
-
-    font-size: 8px;
-
-    letter-spacing: 2px;
-
-    margin-top: 8px;
-}
-
-.archive-arrow {
-    color: #555;
-
-    font-size: 15px;
-}
-
-/* =========================================
-   QUOTE
-========================================= */
-
-.quote {
-    min-height: 75vh;
+    border-top: 1px solid #191919;
 
     display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    padding: 100px 12%;
-
-    text-align: center;
-}
-
-.quote p {
-    max-width: 900px;
-
-    font-family: "Space Mono", monospace;
-
-    font-size: clamp(25px, 4vw, 55px);
-
-    line-height: 1.3;
-
-    color: #bbb;
-
-    letter-spacing: -2px;
-}
-
-.quote span {
-    display: block;
-
-    margin-top: 40px;
+    justify-content: space-between;
 
     color: #444;
 
-    font-size: 8px;
-
-    letter-spacing: 4px;
-}
-
-/* =========================================
-   FOOTER
-========================================= */
-
-footer {
-    padding: 90px 30px;
-
-    border-top: 1px solid #181818;
-
-    text-align: center;
-
-    color: #3f3f3b;
+    font-family: "Space Mono", monospace;
 
     font-size: 8px;
 
-    letter-spacing: 4px;
-
-    line-height: 2.7;
+    letter-spacing: 2px;
 }
 
-/* =========================================
+
+/* =========================
    MOBILE
-========================================= */
+========================= */
 
-@media (max-width: 750px) {
+@media(max-width:800px) {
 
     nav {
-        padding: 18px 20px;
+        padding: 0 20px;
     }
 
     nav a {
-        margin-left: 10px;
-        font-size: 7px;
-        letter-spacing: 1px;
+        margin-left: 8px;
+        font-size: 9px;
     }
 
-    .logo {
-        font-size: 8px;
-        letter-spacing: 3px;
+    .hero {
+        padding: 90px 6% 35px;
     }
 
-    .hero-content {
-        width: 86%;
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
     }
 
     .hero h1 {
-        letter-spacing: -5px;
+        letter-spacing: -4px;
     }
 
-    .intro,
-    .concept,
-    .episodes,
-    .creation,
-    .archive {
-        padding-left: 8%;
-        padding-right: 8%;
+    .photo-wrap img {
+        height: 330px;
     }
 
-    .concept-grid {
-        grid-template-columns: 1fr;
-        gap: 70px;
+    .streaming {
+        width: 88%;
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .episode {
-        grid-template-columns: 45px 1fr;
+    .stream-link {
+        border-bottom: 1px solid #222;
     }
 
-    .episode-status {
-        display: none;
-    }
-
-    .section-heading {
-        display: block;
-    }
-
-    .section-heading span {
-        display: block;
-        margin-top: 20px;
-    }
-
-    .link-grid {
+    .project-grid {
         grid-template-columns: 1fr;
     }
 
-    .archive-link {
-        min-height: 100px;
+    .bottom {
+        grid-template-columns: 1fr;
     }
 
-    .scroll {
-        left: 20px;
+    footer {
+        display: block;
+        line-height: 2;
     }
+
 }
 
 </style>
@@ -872,9 +599,10 @@ footer {
 
 <body>
 
-<!-- =====================================
-     NAVIGATION
-===================================== -->
+
+<!-- =========================
+     NAV
+========================= -->
 
 <nav>
 
@@ -883,583 +611,325 @@ footer {
     </div>
 
     <div>
+        <a href="#music">MUSIC</a>
+        <a href="#projects">PROJECTS</a>
         <a href="#about">ABOUT</a>
-        <a href="#episodes">EPISODES</a>
-        <a href="#archive">ARCHIVE</a>
     </div>
 
 </nav>
 
 
-<!-- =====================================
+
+<!-- =========================
      HERO
-===================================== -->
+========================= -->
 
 <section class="hero">
 
-    <div class="hero-image"></div>
-
-    <div class="hero-content">
-
-        <div class="status">
-            WEB SERIES / CURRENTLY IN DEVELOPMENT
-        </div>
-
-        <h1>
-            THE<br>
-            FOLLOWER
-        </h1>
-
-        <p class="hero-subtitle">
-            A series exploring the mind, the internet,
-            creation, reflection, internet folklore,
-            liminal spaces, games and cinema.
-        </p>
-
-    </div>
-
-    <div class="scroll">
-        ENTER
-    </div>
-
-</section>
-
-
-<main>
-
-
-<!-- =====================================
-     ABOUT
-===================================== -->
-
-<section class="intro" id="about">
-
-    <div class="intro-inner">
-
-        <div class="eyebrow">
-            001 / THE PREMISE
-        </div>
-
-        <h2>
-            SOMETHING<br>
-            IS WATCHING.
-        </h2>
-
-        <p>
-            THE FOLLOWER is a web series currently in
-            development exploring the strange relationship
-            between the human mind and the digital world.
-            <br><br>
-            Internet folklore. Liminal spaces. Games.
-            Movies. Memories. Creation. Reflection.
-            The things we see online — and the things
-            that follow us after we leave.
-        </p>
-
-    </div>
-
-</section>
-
-
-<div class="divider"></div>
-
-
-<!-- =====================================
-     WORLD
-===================================== -->
-
-<section class="concept">
-
-    <div class="concept-grid">
+    <div class="hero-grid">
 
         <div>
 
-            <div class="eyebrow">
-                002 / THE WORLD
+            <div class="label">
+                RECORDING ARTIST • FILMMAKER • CREATOR
             </div>
 
-            <h3>
-                BETWEEN<br>
-                PLACES.
-            </h3>
+            <h1>
+                CHARLIE<br>
+                GAMBINO
+            </h1>
 
-            <p>
-                Familiar places become unfamiliar.
-                Fiction becomes memory.
-                A screen becomes a doorway.
-                <br><br>
-                THE FOLLOWER moves through the spaces
-                between reality, imagination and the
-                internet.
+            <p class="hero-description">
+                Independent recording artist creating music,
+                videos, films and digital projects.
             </p>
 
-        </div>
-
-
-        <div class="concept-list">
-
-            <div class="concept-item">
-                <span>LIMINAL SPACES</span>
-                <span>01</span>
-            </div>
-
-            <div class="concept-item">
-                <span>INTERNET FOLKLORE</span>
-                <span>02</span>
-            </div>
-
-            <div class="concept-item">
-                <span>VIDEO GAMES</span>
-                <span>03</span>
-            </div>
-
-            <div class="concept-item">
-                <span>MOVIE PARODIES</span>
-                <span>04</span>
-            </div>
-
-            <div class="concept-item">
-                <span>THE MIND</span>
-                <span>05</span>
-            </div>
-
-            <div class="concept-item">
-                <span>CREATION</span>
-                <span>06</span>
-            </div>
-
-            <div class="concept-item">
-                <span>REFLECTION</span>
-                <span>07</span>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================
-     LIMINAL IMAGE
-===================================== -->
-
-<section class="liminal">
-
-    <div class="liminal-content">
-
-        <div class="liminal-small">
-            YOU HAVE BEEN HERE BEFORE
-        </div>
-
-        <h2>
-            WHERE ARE YOU?
-        </h2>
-
-        <p>
-            Some places feel familiar for a reason.
-            Some memories don't belong to you.
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================
-     EPISODES
-===================================== -->
-
-<section class="episodes" id="episodes">
-
-    <div class="section-heading">
-
-        <h2>EPISODES</h2>
-
-        <span>
-            ARCHIVE / 001—∞
-        </span>
-
-    </div>
-
-
-    <div class="episode">
-
-        <div class="episode-number">
-            001
-        </div>
-
-        <div>
-            <h3>
-                THE FOLLOWER
-            </h3>
-
-            <p>
-                First transmission.
-            </p>
-        </div>
-
-        <div class="episode-status">
-            IN DEVELOPMENT
-        </div>
-
-    </div>
-
-
-    <div class="episode">
-
-        <div class="episode-number">
-            002
-        </div>
-
-        <div>
-            <h3>
-                UNKNOWN
-            </h3>
-
-            <p>
-                Information unavailable.
-            </p>
-        </div>
-
-        <div class="episode-status">
-            UNKNOWN
-        </div>
-
-    </div>
-
-
-    <div class="episode">
-
-        <div class="episode-number">
-            003
-        </div>
-
-        <div>
-            <h3>
-                UNKNOWN
-            </h3>
-
-            <p>
-                Information unavailable.
-            </p>
-        </div>
-
-        <div class="episode-status">
-            UNKNOWN
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================
-     CREATION
-===================================== -->
-
-<section class="creation">
-
-    <div class="creation-inner">
-
-        <div class="eyebrow">
-            003 / CREATION
-        </div>
-
-        <h2>
-            MADE ON<br>
-            THE INTERNET.
-        </h2>
-
-        <p>
-            THE FOLLOWER draws from the strange visual
-            language of the internet — forgotten websites,
-            old games, strange videos, urban legends,
-            screenshots, movie scenes, digital memories,
-            and the endless collection of things people
-            leave behind online.
-            <br><br>
-            It is part story, part experiment, part
-            reflection on the world that exists behind
-            the screen.
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================
-     SOCIAL + MUSIC ARCHIVE
-===================================== -->
-
-<section class="archive" id="archive">
-
-    <div class="archive-heading">
-
-        <div class="eyebrow">
-            004 / EXTERNAL SIGNALS
-        </div>
-
-        <h2>
-            ARCHIVE
-        </h2>
-
-        <p>
-            FOLLOW / WATCH / LISTEN
-        </p>
-
-    </div>
-
-
-    <div class="link-grid">
-
-
-        <!-- TIKTOK -->
-
-        <a
-            class="archive-link"
-            href="https://www.tiktok.com/@charliegambino.epsiodes"
-            target="_blank"
-            rel="noopener"
-        >
-
-            <div>
-
-                <div class="archive-name">
-                    TIKTOK
-                </div>
-
-                <div class="archive-description">
-                    EPISODES / SHORT TRANSMISSIONS
-                </div>
-
-            </div>
-
-            <div class="archive-arrow">
-                ↗
-            </div>
-
-        </a>
-
-
-        <!-- YOUTUBE -->
-
-        <a
-            class="archive-link"
-            href="https://www.youtube.com/@CharlieGambino"
-            target="_blank"
-            rel="noopener"
-        >
-
-            <div>
-
-                <div class="archive-name">
-                    YOUTUBE
-                </div>
-
-                <div class="archive-description">
-                    VIDEO / FILM / MUSIC
-                </div>
-
-            </div>
-
-            <div class="archive-arrow">
-                ↗
-            </div>
-
-        </a>
-
-
-        <!-- INSTAGRAM -->
-
-        <a
-            class="archive-link"
-            href="https://instagram.com/charliegambino.episodes"
-            target="_blank"
-            rel="noopener"
-        >
-
-            <div>
-
-                <div class="archive-name">
-                    INSTAGRAM
-                </div>
-
-                <div class="archive-description">
-                    IMAGES / EPISODES / UPDATES
-                </div>
-
-            </div>
-
-            <div class="archive-arrow">
-                ↗
-            </div>
-
-        </a>
-
-
-        <!-- APPLE MUSIC -->
-
-        <a
-            class="archive-link"
-            href="https://music.apple.com/us/artist/charlie-gambino/1749800755"
-            target="_blank"
-            rel="noopener"
-        >
-
-            <div>
-
-                <div class="archive-name">
+            <div class="primary-links">
+
+                <a
+                    class="primary-link"
+                    href="https://open.spotify.com/artist/3OUwQnoZgQsaTNbueTG0PE?si=4OpUBm40T6irsmQclGzj8A"
+                    target="_blank"
+                >
+                    LISTEN ON SPOTIFY
+                </a>
+
+                <a
+                    class="primary-link secondary"
+                    href="https://music.apple.com/us/artist/charlie-gambino/1749800755"
+                    target="_blank"
+                >
                     APPLE MUSIC
-                </div>
+                </a>
 
-                <div class="archive-description">
-                    MUSIC / RELEASES
-                </div>
-
-            </div>
-
-            <div class="archive-arrow">
-                ↗
-            </div>
-
-        </a>
-
-
-        <!-- SPOTIFY -->
-
-        <a
-            class="archive-link"
-            href="https://open.spotify.com/artist/3OUwQnoZgQsaTNbueTG0PE?si=4OpUBm40T6irsmQclGzj8A"
-            target="_blank"
-            rel="noopener"
-        >
-
-            <div>
-
-                <div class="archive-name">
-                    SPOTIFY
-                </div>
-
-                <div class="archive-description">
-                    MUSIC / STREAMING
-                </div>
+                <a
+                    class="primary-link secondary"
+                    href="https://www.youtube.com/@CharlieGambino"
+                    target="_blank"
+                >
+                    YOUTUBE
+                </a>
 
             </div>
 
-            <div class="archive-arrow">
-                ↗
+        </div>
+
+
+        <div class="photo-wrap">
+
+            <img
+                src="i dont wanna say goodbye DSC04780.png"
+                alt="Charlie Gambino independent recording artist"
+            >
+
+            <div class="photo-label">
+                CHARLIE GAMBINO / OFFICIAL
             </div>
 
-        </a>
-
-
-        <!-- PANDORA -->
-
-        <a
-            class="archive-link"
-            href="https://www.pandora.com/artist/all-songs/charlie-gambino/AR7qP2PXxtdrmw6"
-            target="_blank"
-            rel="noopener"
-        >
-
-            <div>
-
-                <div class="archive-name">
-                    PANDORA
-                </div>
-
-                <div class="archive-description">
-                    MUSIC / RADIO
-                </div>
-
-            </div>
-
-            <div class="archive-arrow">
-                ↗
-            </div>
-
-        </a>
-
-
-        <!-- DEEZER -->
-
-        <a
-            class="archive-link"
-            href="https://link.deezer.com/s/34oGYWHCHzwYtl5B71fbS"
-            target="_blank"
-            rel="noopener"
-        >
-
-            <div>
-
-                <div class="archive-name">
-                    DEEZER
-                </div>
-
-                <div class="archive-description">
-                    MUSIC / STREAMING
-                </div>
-
-            </div>
-
-            <div class="archive-arrow">
-                ↗
-            </div>
-
-        </a>
-
+        </div>
 
     </div>
 
 </section>
 
 
-<!-- =====================================
-     QUOTE
-===================================== -->
 
-<section class="quote">
+<!-- =========================
+     STREAMING
+========================= -->
 
-    <div>
+<section class="streaming" id="music">
 
-        <p>
-            "THE INTERNET NEVER REALLY
-            FORGETS."
-        </p>
+
+    <a
+        class="stream-link"
+        href="https://open.spotify.com/artist/3OUwQnoZgQsaTNbueTG0PE?si=4OpUBm40T6irsmQclGzj8A"
+        target="_blank"
+    >
+        SPOTIFY ↗
+    </a>
+
+
+    <a
+        class="stream-link"
+        href="https://music.apple.com/us/artist/charlie-gambino/1749800755"
+        target="_blank"
+    >
+        APPLE MUSIC ↗
+    </a>
+
+
+    <a
+        class="stream-link"
+        href="https://www.youtube.com/@CharlieGambino"
+        target="_blank"
+    >
+        YOUTUBE ↗
+    </a>
+
+
+    <a
+        class="stream-link"
+        href="https://www.pandora.com/artist/all-songs/charlie-gambino/AR7qP2PXxtdrmw6"
+        target="_blank"
+    >
+        PANDORA ↗
+    </a>
+
+
+    <a
+        class="stream-link"
+        href="https://link.deezer.com/s/34oGYWHCHzwYtl5B71fbS"
+        target="_blank"
+    >
+        DEEZER ↗
+    </a>
+
+
+    <a
+        class="stream-link"
+        href="https://instagram.com/charliegambino.episodes"
+        target="_blank"
+    >
+        INSTAGRAM ↗
+    </a>
+
+
+</section>
+
+
+
+<!-- =========================
+     PROJECTS
+========================= -->
+
+<section class="projects" id="projects">
+
+    <div class="section-top">
+
+        <h2>
+            Projects
+        </h2>
 
         <span>
-            — THE FOLLOWER
+            MUSIC / FILM / DIGITAL
         </span>
 
     </div>
 
+
+    <div class="project-grid">
+
+
+        <div class="project follower">
+
+            <div class="project-tag">
+                WEB SERIES / IN DEVELOPMENT
+            </div>
+
+            <h3>
+                The Follower
+            </h3>
+
+            <p>
+                A web series exploring the mind, the internet,
+                creation, reflection, internet folklore,
+                liminal spaces, games and movie parodies.
+            </p>
+
+            <a
+                href="https://www.tiktok.com/@charliegambino.epsiodes"
+                target="_blank"
+            >
+                VIEW THE FOLLOWER →
+            </a>
+
+        </div>
+
+
+
+        <div class="project">
+
+            <div class="project-tag">
+                MUSIC
+            </div>
+
+            <h3>
+                Releases
+            </h3>
+
+            <p>
+                Listen to Charlie Gambino's music across
+                major streaming platforms.
+            </p>
+
+            <a
+                href="https://open.spotify.com/artist/3OUwQnoZgQsaTNbueTG0PE?si=4OpUBm40T6irsmQclGzj8A"
+                target="_blank"
+            >
+                LISTEN →
+            </a>
+
+        </div>
+
+
+    </div>
+
 </section>
 
 
-</main>
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="bottom" id="about">
 
 
-<!-- =====================================
+    <div class="about">
+
+        <h2>
+            About Charlie Gambino
+        </h2>
+
+        <p>
+            Charlie Gambino is an independent recording artist
+            and filmmaker creating music, videos, films,
+            web series and visual projects.
+
+            This website is the official home for Charlie
+            Gambino's music and creative work.
+        </p>
+
+    </div>
+
+
+
+    <div class="follow">
+
+        <h2>
+            Follow
+        </h2>
+
+        <div class="follow-links">
+
+            <a
+                href="https://www.youtube.com/@CharlieGambino"
+                target="_blank"
+            >
+                YouTube
+            </a>
+
+            <a
+                href="https://www.tiktok.com/@charliegambino.epsiodes"
+                target="_blank"
+            >
+                TikTok
+            </a>
+
+            <a
+                href="https://instagram.com/charliegambino.episodes"
+                target="_blank"
+            >
+                Instagram
+            </a>
+
+            <a
+                href="https://open.spotify.com/artist/3OUwQnoZgQsaTNbueTG0PE?si=4OpUBm40T6irsmQclGzj8A"
+                target="_blank"
+            >
+                Spotify
+            </a>
+
+            <a
+                href="https://music.apple.com/us/artist/charlie-gambino/1749800755"
+                target="_blank"
+            >
+                Apple Music
+            </a>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================
      FOOTER
-===================================== -->
+========================= -->
 
 <footer>
 
-    THE FOLLOWER
+    <div>
+        CHARLIE GAMBINO
+    </div>
 
-    <br>
-
-    A CHARLIE GAMBINO WEB SERIES
-
-    <br>
-
-    CURRENTLY IN DEVELOPMENT
-
-    <br><br>
-
-    © 2026 CHARLIE GAMBINO
+    <div>
+        MUSIC • FILM • PROJECTS • © 2026
+    </div>
 
 </footer>
 
